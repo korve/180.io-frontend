@@ -1,0 +1,22 @@
+{
+  "name": "180.io-frontend",
+  "version": "1.0.0",
+  "description": "180.io-frontend\r ===============",
+  "scripts": {
+    "start": "node node_modules/http-server/bin/http-server public",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/korve/180.io-frontend.git"
+  },
+  "author": "korve <aeckardt@outlook.com>",
+  "license": "none",
+  "bugs": {
+    "url": "https://github.com/korve/180.io-frontend/issues"
+  },
+  "homepage": "https://github.com/korve/180.io-frontend",
+  "devDependencies": {
+    "http-server": "^0.7.4"
+  }
+}
