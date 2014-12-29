@@ -5,18 +5,23 @@
             <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur facere facilis porro reprehenderit sequi. A incidunt maiores quibusdam repellendus. Fugiat.
             </p>
 
-            <form data-ng-submit="signup()" data-ng-controller="SignUpController">
-                <div class="form-group">
-                    <label for="signup-name">Name</label>
-                    <input type="text" class="form-control" id="signup-name" placeholder="Enter your name" data-ng-model="name">
+            <div data-ng-if="errors" class="alert alert-danger">
+                <p data-ng-repeat="error in errors"></p>
+            </div>
+
+            <form data-ng-submit="signup()" data-ng-controller="SignUpController" data-ng-hide="user.handle">
+                <div class="form-group" data-ng-class="{ 'has-error': errors.name }">
+                    <label for="signup-name" class="control-label">Name <small class="text-muted">(min. 3)</small></label>
+                    <input type="text" class="form-control" id="signup-name" placeholder="Enter your name" data-ng-model="user.name" required>
                 </div>
-                <div class="form-group">
-                    <label for="signup-email">Email address</label>
-                    <input type="email" class="form-control" id="signup-email" placeholder="Enter email" data-ng-model="email">
+                <div class="form-group" data-ng-class="{ 'has-error': errors.email }">
+                    <label for="signup-email" class="control-label">Email address</label>
+                    <input type="email" class="form-control" id="signup-email" placeholder="Enter email" data-ng-model="user.email" required>
+                    <p class="text-danger" data-ng-if="errors.email">Diese E-Mail wird bereits verwendet</p>
                 </div>
-                <div class="form-group">
-                    <label for="signup-password">Password</label>
-                    <input type="password" class="form-control" id="signup-password" placeholder="Password" data-ng-model="password">
+                <div class="form-group" data-ng-class="{ 'has-error': errors.password }">
+                    <label for="signup-password" class="control-label">Password</label>
+                    <input type="password" class="form-control" id="signup-password" placeholder="Password" data-ng-model="user.password" required>
                 </div>
                 <button type="submit" class="btn btn-primary">Sign up</button>
             </form>

@@ -9,13 +9,23 @@ angular.module('one80ioRoutes')
 				templateUrl: 'app/signInView/signInView.html'
 			});
 	}])
-	.controller('SignInController', ['$scope', 'User', function ($scope, User) {
+	.controller('SignInController', ['$scope', 'localStorageService', 'User', function ($scope, localStorageService, User) {
 		$scope.email = '';
 		$scope.password = '';
 
 		$scope.signin = function () {
-			var user = User.login({ username: $scope.email, password: $scope.password }, function (res) {
+			User.login({ username: $scope.email, password: $scope.password }, function (res) {
 				// TODO add successful login handler
+				localStorageService.set('accessToken', res.access_token);
+				localStorageService.set('accessTokenType', res.token_type);
+				localStorageService.set('accessTokenExpires', res.expires_in);
+
+				User.get(function (user) {
+					localStorageService.set('user', {
+						name: user.name,
+						handle: user.handle
+					});
+				});
 			}, function (err) {
 				if(err.status === 401)
 					$scope.error = 'Invalid login. Please check your login credentials.';
