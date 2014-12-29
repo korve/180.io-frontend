@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <h1>New Account</h1>
+            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur facere facilis porro reprehenderit sequi. A incidunt maiores quibusdam repellendus. Fugiat.
+            </p>
+
+            <form data-ng-submit="signup()" data-ng-controller="SignUpController">
+                <div class="form-group">
+                    <label for="signup-name">Name</label>
+                    <input type="text" class="form-control" id="signup-name" placeholder="Enter your name" data-ng-model="name">
+                </div>
+                <div class="form-group">
+                    <label for="signup-email">Email address</label>
+                    <input type="email" class="form-control" id="signup-email" placeholder="Enter email" data-ng-model="email">
+                </div>
+                <div class="form-group">
+                    <label for="signup-password">Password</label>
+                    <input type="password" class="form-control" id="signup-password" placeholder="Password" data-ng-model="password">
+                </div>
+                <button type="submit" class="btn btn-primary">Sign up</button>
+            </form>
+        </div>
+
+        <div class="col-sm-6">
+            <!-- TODO replace placeholder-->
+            <img class="img-responsive"
+                 src="http://previews.123rf.com/images/unkreatives/unkreatives1206/unkreatives120600018/14189749-illustration-of-a-red-target-with-three-arrows-hitting-the-center.jpg"
+                 alt=""/>
+        </div>
+    </div>
+</div>

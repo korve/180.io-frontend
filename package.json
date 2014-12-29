@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "180.io-frontend\r ===============",
   "scripts": {
-    "start": "node node_modules/http-server/bin/http-server public",
+    "start": "node node_modules/http-server/bin/http-server public --cors",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

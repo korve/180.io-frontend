@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <h1>Sign in</h1>
+
+            <div data-ng-if="error" class="alert alert-danger">
+                <p data-ng-bind="error"></p>
+            </div>
+
+            <form data-ng-submit="signin()" data-ng-controller="SignInController">
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter email" data-ng-model="email">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Password" data-ng-model="password">
+                </div>
+                <button type="submit" class="btn btn-primary">Sign in</button>
+            </form>
+
+            <hr/>
+
+            <h1>New Account</h1>
+            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur facere facilis porro reprehenderit sequi. A incidunt maiores quibusdam repellendus. Fugiat.
+            </p>
+            <p>
+                <a class="btn btn-primary" data-ng-href="#/signup">Sign up for new account</a>
+            </p>
+        </div>
+
+        <div class="col-sm-6">
+            <!-- TODO replace placeholder-->
+            <img class="img-responsive"
+                 src="http://previews.123rf.com/images/unkreatives/unkreatives1206/unkreatives120600018/14189749-illustration-of-a-red-target-with-three-arrows-hitting-the-center.jpg"
+                 alt=""/>
+        </div>
+    </div>
+</div>
